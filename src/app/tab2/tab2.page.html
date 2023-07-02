@@ -1,0 +1,20 @@
+<ion-content color="dark" [fullscreen]="true">
+  <ion-searchbar placeholder="Buscar peli" animated="true" (change)="buscar()" [formControl]="buscador"></ion-searchbar>
+
+  <ion-slides [options]="slideOpts">
+    <ion-slide *ngFor="let p of pelis | pares">
+      <ion-row>
+        <ion-col size="12" *ngFor="let item of p">
+          <ion-card class="card" style="width:50%;" (click)="verDetalle(item.id)">
+            <img class="poster" [src]="item.poster_path | imagen">
+            <div class="card-block">
+              <ion-card-subtitle>{{item.release_date}}</ion-card-subtitle>
+              <ion-card-subtitle>{{item.title}}</ion-card-subtitle>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

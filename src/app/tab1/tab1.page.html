@@ -1,0 +1,8 @@
+<ion-content color="dark" [fullscreen]="true" class="text-center">
+  <h1>Peliculas recientes</h1>
+  <app-slidebackdrop2 [pelis]="recientes"></app-slidebackdrop2>
+  <h1>Cartelera</h1>
+  <app-poster [pelis]="cartelera"></app-poster>
+  <h1>Populares</h1>
+  <app-pares [pelis]="populares" (cargarMas)="cargarMas()"></app-pares>
+</ion-content>
